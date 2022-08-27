@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E13E9A228BAA36800119FF1 /* CarBode in Frameworks */ = {isa = PBXBuildFile; productRef = 2E13E9A128BAA36800119FF1 /* CarBode */; };
+		2E13E9A828BAA80A00119FF1 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E13E9A728BAA80A00119FF1 /* ScannerViewModel.swift */; };
+		2E13E9AA28BAA95E00119FF1 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E13E9A928BAA95E00119FF1 /* ScannerView.swift */; };
 		2E91094628BAA17600CA0BA5 /* fi_dms_barcode_decoderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E91094528BAA17600CA0BA5 /* fi_dms_barcode_decoderApp.swift */; };
 		2E91094828BAA17600CA0BA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E91094728BAA17600CA0BA5 /* ContentView.swift */; };
 		2E91094A28BAA17600CA0BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E91094928BAA17600CA0BA5 /* Assets.xcassets */; };
@@ -14,7 +17,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2E91094228BAA17600CA0BA5 /* fi-dms-barcode-decoder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fi-dms-barcode-decoder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E13E9A328BAA47900119FF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2E13E9A728BAA80A00119FF1 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		2E13E9A928BAA95E00119FF1 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		2E91094228BAA17600CA0BA5 /* FI-DMS-Barcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FI-DMS-Barcode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E91094528BAA17600CA0BA5 /* fi_dms_barcode_decoderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fi_dms_barcode_decoderApp.swift; sourceTree = "<group>"; };
 		2E91094728BAA17600CA0BA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2E91094928BAA17600CA0BA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -26,12 +32,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E13E9A228BAA36800119FF1 /* CarBode in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E13E9A428BAA79300119FF1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E91094728BAA17600CA0BA5 /* ContentView.swift */,
+				2E13E9A928BAA95E00119FF1 /* ScannerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E13E9A628BAA7D200119FF1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2E13E9A728BAA80A00119FF1 /* ScannerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		2E91093928BAA17600CA0BA5 = {
 			isa = PBXGroup;
 			children = (
@@ -43,7 +67,7 @@
 		2E91094328BAA17600CA0BA5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2E91094228BAA17600CA0BA5 /* fi-dms-barcode-decoder.app */,
+				2E91094228BAA17600CA0BA5 /* FI-DMS-Barcode.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,8 +75,10 @@
 		2E91094428BAA17600CA0BA5 /* fi-dms-barcode-decoder */ = {
 			isa = PBXGroup;
 			children = (
+				2E13E9A628BAA7D200119FF1 /* ViewModel */,
+				2E13E9A428BAA79300119FF1 /* View */,
+				2E13E9A328BAA47900119FF1 /* Info.plist */,
 				2E91094528BAA17600CA0BA5 /* fi_dms_barcode_decoderApp.swift */,
-				2E91094728BAA17600CA0BA5 /* ContentView.swift */,
 				2E91094928BAA17600CA0BA5 /* Assets.xcassets */,
 				2E91094B28BAA17600CA0BA5 /* Preview Content */,
 			);
@@ -83,8 +109,11 @@
 			dependencies = (
 			);
 			name = "fi-dms-barcode-decoder";
+			packageProductDependencies = (
+				2E13E9A128BAA36800119FF1 /* CarBode */,
+			);
 			productName = "fi-dms-barcode-decoder";
-			productReference = 2E91094228BAA17600CA0BA5 /* fi-dms-barcode-decoder.app */;
+			productReference = 2E91094228BAA17600CA0BA5 /* FI-DMS-Barcode.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -111,6 +140,9 @@
 				Base,
 			);
 			mainGroup = 2E91093928BAA17600CA0BA5;
+			packageReferences = (
+				2E13E9A028BAA36800119FF1 /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */,
+			);
 			productRefGroup = 2E91094328BAA17600CA0BA5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +170,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E91094828BAA17600CA0BA5 /* ContentView.swift in Sources */,
+				2E13E9AA28BAA95E00119FF1 /* ScannerView.swift in Sources */,
+				2E13E9A828BAA80A00119FF1 /* ScannerViewModel.swift in Sources */,
 				2E91094628BAA17600CA0BA5 /* fi_dms_barcode_decoderApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +304,7 @@
 				DEVELOPMENT_TEAM = T4V85UXJG5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "fi-dms-barcode-decoder/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -281,7 +316,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.tatomi.fi-dms-barcode-decoder";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "FI-DMS-Barcode";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -299,6 +334,7 @@
 				DEVELOPMENT_TEAM = T4V85UXJG5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "fi-dms-barcode-decoder/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -310,7 +346,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.tatomi.fi-dms-barcode-decoder";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "FI-DMS-Barcode";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -339,6 +375,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2E13E9A028BAA36800119FF1 /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/heart/CarBode-Barcode-Scanner-For-SwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2E13E9A128BAA36800119FF1 /* CarBode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E13E9A028BAA36800119FF1 /* XCRemoteSwiftPackageReference "CarBode-Barcode-Scanner-For-SwiftUI" */;
+			productName = CarBode;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2E91093A28BAA17600CA0BA5 /* Project object */;
 }

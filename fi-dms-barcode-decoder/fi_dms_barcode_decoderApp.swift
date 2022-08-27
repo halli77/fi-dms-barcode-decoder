@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct fi_dms_barcode_decoderApp: App {
+    @StateObject private var vm = ScannerViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(vm)
         }
     }
 }
+
