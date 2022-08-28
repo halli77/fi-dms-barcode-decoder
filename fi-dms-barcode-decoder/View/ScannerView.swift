@@ -7,7 +7,7 @@
 
 import SwiftUI
 import CarBode
-import AVFoundation //import to access barcode types you want to scan
+import AVFoundation 
 
 
 struct ScannerView: View {
@@ -23,7 +23,17 @@ struct ScannerView: View {
                 Button {
                     vm.torchLightIsOn.toggle()
                 } label: {
-                    Label("Licht an/aus", systemImage: "flashlight.on.fill")
+                    Label("Licht", systemImage: "flashlight.on.fill")
+                }
+                
+                Button {
+                    if vm.cameraPosition == .back {
+                        vm.cameraPosition = .front
+                    } else {
+                        vm.cameraPosition = .back
+                    }
+                } label: {
+                    Label("Kamera", systemImage: "arrow.triangle.2.circlepath")
                 }
                 
                 Spacer()
@@ -43,6 +53,7 @@ struct ScannerView: View {
                 supportBarcode: .constant([.code39, .pdf417]),
                 torchLightIsOn: $vm.torchLightIsOn,
                 scanInterval: .constant(0.8),
+                cameraPosition: $vm.cameraPosition,
                 mockBarCode: .constant(BarcodeData(value:"1000102622104092211770", type: .code39))
                 ){
                     //print("BarCodeType =",$0.type.rawValue, "Value =",$0.value)

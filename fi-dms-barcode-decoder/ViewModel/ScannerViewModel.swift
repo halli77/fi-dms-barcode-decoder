@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation 
 
  
 
@@ -14,6 +15,7 @@ class ScannerViewModel: ObservableObject {
     @Published var barcodeType: String = ""
     @Published var fields: [String : String] = [:]
     @Published var torchLightIsOn: Bool = false
+    @Published var cameraPosition = AVCaptureDevice.Position.back
     var typeOfField: [String : String] = [:]
     
     init() {
