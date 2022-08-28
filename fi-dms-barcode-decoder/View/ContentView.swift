@@ -52,8 +52,10 @@ struct ContentView: View {
                                     HStack {
                                         Text("[\(key)]")
                                             .font(.caption)
-                                        Text("\(vm.typeOfField[key] ?? "Feld unbekannt"):")
-                                            .font(.caption)
+                                        if vm.showTypeOfFields {
+                                            Text("\(vm.typeOfField[key] ?? "???"):")
+                                                .font(.caption)
+                                        }
                                         Spacer()
                                         Text("\(value)")
                                             .fontWeight(.thin)
@@ -64,6 +66,10 @@ struct ContentView: View {
                                 }
 
                         }.listStyle(.plain)
+                        .onLongPressGesture(minimumDuration: 5) {
+                            vm.showTypeOfFields.toggle()
+                        }
+
                         
                      
 

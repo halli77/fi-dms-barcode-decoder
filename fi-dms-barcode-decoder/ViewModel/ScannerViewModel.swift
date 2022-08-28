@@ -16,6 +16,7 @@ class ScannerViewModel: ObservableObject {
     @Published var fields: [String : String] = [:]
     @Published var torchLightIsOn: Bool = false
     @Published var cameraPosition = AVCaptureDevice.Position.back
+    @Published var showTypeOfFields: Bool = false
     var typeOfField: [String : String] = [:]
     
     init() {
