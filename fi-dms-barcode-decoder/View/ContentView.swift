@@ -20,34 +20,56 @@ struct ContentView: View {
             
             
             VStack {
-                Text("FI-DMS-Scanner")
+
+                if vm.fields.isEmpty {
+                    VStack {
+ 
+                        Text("Bitte Barcode scannen...")
+                      
+
+                    }
                     .font(.title)
+                    .foregroundColor(Color.white)
                     .frame(maxWidth: .infinity)
-                    .frame(height: 50)
-                    
-                    
+                    .frame(height: 200)
+                    .background(Color.blue.cornerRadius(10))
+                    .shadow(color: .gray, radius: 20, x: 0, y: 0.8)
+                        
+                } else {
+                    HStack {
+                        Button {
+                            vm.clearFields()
+                        } label: {
+                            Label("löschen", systemImage: "trash.circle.fill")
+                        }
+                    }
                     
                   
-                
-                
-                
-                    List {
-                        
-                            ForEach(vm.fields.sorted(by: <), id: \.key) { key, value in
-                                HStack {
-                                    Text("\(vm.typeOfField[key] ?? "Feld unbekannt"):")
-                                        .fontWeight(.bold)
-                                    Text("[\(key)]")
-                                        .fontWeight(.thin)
-                                    Spacer()
-                                    Text("\(value)")
-                                        .textSelection(.enabled)
+                     
+                        List {
+                            
+                                ForEach(vm.fields.sorted(by: <), id: \.key) { key, value in
+                                    HStack {
+                                        Text("\(vm.typeOfField[key] ?? "Feld unbekannt"):")
+                                            .fontWeight(.bold)
+                                        Text("[\(key)]")
+                                            .fontWeight(.thin)
+                                        Spacer()
+                                        Text("\(value)")
+                                            .textSelection(.enabled)
+                                    }
+                                    
+                                                
                                 }
-                                
-                                            
-                            }
 
-                    }.listStyle(.plain)
+                        }.listStyle(.plain)
+                        
+                     
+
+                }
+                
+                
+                    
                 
                 
                 Spacer()
@@ -85,10 +107,7 @@ struct ContentView_Previews: PreviewProvider {
             ContentView()
                 .environmentObject(ScannerViewModel())
             .previewInterfaceOrientation(.portrait)
-            ContentView()
-                .preferredColorScheme(.dark)
-                .environmentObject(ScannerViewModel())
-                .previewInterfaceOrientation(.portrait)
+      
         }
     }
 }

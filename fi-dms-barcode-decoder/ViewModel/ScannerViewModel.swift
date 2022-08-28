@@ -72,6 +72,10 @@ class ScannerViewModel: ObservableObject {
         }
     }
     
+    func clearFields() {
+        self.fields = [:]
+    }
+    
     func decode1D (value: String) {
         //aaaaaaaaaabcdddeeeeeef  22
         fields = [:]
