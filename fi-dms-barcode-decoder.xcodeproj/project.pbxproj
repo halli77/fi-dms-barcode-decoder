@@ -306,7 +306,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "fi-dms-barcode-decoder/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "DMS-Decoder";
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera, to be able to read barcodes.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Die App benötigt Zugriff auf die Kamera, um Barcodes scannen zu können.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -338,7 +338,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "fi-dms-barcode-decoder/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "DMS-Decoder";
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs access to the camera, to be able to read barcodes.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Die App benötigt Zugriff auf die Kamera, um Barcodes scannen zu können.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
