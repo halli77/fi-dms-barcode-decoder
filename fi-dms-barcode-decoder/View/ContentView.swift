@@ -50,10 +50,10 @@ struct ContentView: View {
                             
                                 ForEach(vm.fields.sorted(by: <), id: \.key) { key, value in
                                     HStack {
-                                        Text("\(vm.typeOfField[key] ?? "Feld unbekannt"):")
-                                            .fontWeight(.bold)
                                         Text("[\(key)]")
                                             .fontWeight(.thin)
+                                        Text("\(vm.typeOfField[key] ?? "Feld unbekannt"):")
+                                            .fontWeight(.bold)
                                         Spacer()
                                         Text("\(value)")
                                             .textSelection(.enabled)
