@@ -34,6 +34,7 @@ struct ScannerView: View {
                     Label("Schließen", systemImage: "xmark")
                 }
             }
+            .padding()
                    
                                 
             Spacer()
@@ -64,14 +65,16 @@ struct ScannerView: View {
                     //Draw box
                     $0.draw(lineWidth: CGFloat(lineWidth), lineColor: lineColor, fillColor: fillColor)
                 }
+                .padding()
         }
+        .padding()
         
     }
 }
 
 struct ScannerView_Previews: PreviewProvider {
     static var previews: some View {
-        // ScannerView(vm: vm)
-        EmptyView()
+        ScannerView(vm: ScannerViewModel())
+        
     }
 }
