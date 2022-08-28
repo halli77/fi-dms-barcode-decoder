@@ -18,24 +18,33 @@ struct ScannerView: View {
     var body: some View {
         // AVMetadataObject.ObjectType
         VStack {
-            // Click to Toggle camera
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        Text("Close Scanner")
-                    }
-                        
-                    Spacer()
+            HStack {
+                
+                Button {
+                    vm.torchLightIsOn.toggle()
+                } label: {
+                    Label("Licht an/aus", systemImage: "flashlight.on.fill")
+                }
+                
+                Spacer()
+                
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Label("Schließen", systemImage: "xmark")
+                }
+            }
+                   
+                                
+            Spacer()
             
             CBScanner(
-                supportBarcode: .constant([.code39, .pdf417]), //Set type of barcode you want to scan
-                    scanInterval: .constant(1.0) //Event will trigger every 5 seconds
+                supportBarcode: .constant([.code39, .pdf417]),
+                torchLightIsOn: $vm.torchLightIsOn,
+                scanInterval: .constant(0.8)
                 ){
-                    //When the scanner found a barcode
-                    print("BarCodeType =",$0.type.rawValue, "Value =",$0.value)
+                    //print("BarCodeType =",$0.type.rawValue, "Value =",$0.value)
                     vm.updateBarcode(newBarcodeType: $0.type.rawValue, newBarcodeValue: $0.value)
-//                    vm.barcodeValue = String($0.value)
-//                    vm.barcodeType = $0.type.rawValue
                     presentationMode.wrappedValue.dismiss()
                 }
                 onDraw: {

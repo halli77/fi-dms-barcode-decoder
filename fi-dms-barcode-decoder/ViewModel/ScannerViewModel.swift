@@ -10,14 +10,14 @@ import Foundation
  
 
 class ScannerViewModel: ObservableObject {
-    @Published var barcodeValue: String
-    @Published var barcodeType: String   // org.iso.PDF417
+    @Published var barcodeValue: String = ""
+    @Published var barcodeType: String = ""
     @Published var fields: [String : String] = [:]
+    @Published var torchLightIsOn: Bool = false
     var typeOfField: [String : String] = [:]
     
     init() {
-        barcodeType = ""
-        barcodeValue = ""
+     
         
         // 1D
         typeOfField["1"] = "Pers.- oder Kontonr."
