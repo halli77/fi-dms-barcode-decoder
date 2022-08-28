@@ -42,7 +42,8 @@ struct ScannerView: View {
             CBScanner(
                 supportBarcode: .constant([.code39, .pdf417]),
                 torchLightIsOn: $vm.torchLightIsOn,
-                scanInterval: .constant(0.8)
+                scanInterval: .constant(0.8),
+                mockBarCode: .constant(BarcodeData(value:"1000102622104092211770", type: .code39))
                 ){
                     //print("BarCodeType =",$0.type.rawValue, "Value =",$0.value)
                     vm.updateBarcode(newBarcodeType: $0.type.rawValue, newBarcodeValue: $0.value)
